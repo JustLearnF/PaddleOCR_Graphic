@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ChineseOcr</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../Downloads/文字识别.png</normaloff>../../../../Downloads/文字识别.png</iconset>
+  </property>
+  <widget class="QWidget" name="BottomWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QWidget" name="MainWidget" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget
+{
+background-color:rgb(3,22,52);
+}</string>
+    </property>
+    <widget class="QWidget" name="TitleBar" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>800</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget
+{
+background-color:rgb(3,54,73);
+}</string>
+     </property>
+     <widget class="QPushButton" name="MiniumWindow">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>0</y>
+        <width>60</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border:none;
+color:white;
+background-color:rgb(3,54,73);
+font-size:35px;
+}
+QPushButton:hover
+{
+background-color:rgb(2, 41, 55);
+}</string>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="CloseWindow">
+      <property name="geometry">
+       <rect>
+        <x>735</x>
+        <y>0</y>
+        <width>60</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border:none;
+color:white;
+background-color:rgb(3,54,73);
+font-size:25px;
+}
+QPushButton:hover
+{
+background-color:rgb(2, 41, 55);
+}</string>
+      </property>
+      <property name="text">
+       <string>x</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ProgramName">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>250</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel
+{
+background-color:rgb(3,101,100);
+border-radius:25px;
+color:white;
+font-size:30px;
+}</string>
+      </property>
+      <property name="text">
+       <string>ChineseOCR</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="FootBar" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>560</y>
+       <width>800</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget
+{
+background-color:rgb(3,54,73);
+}</string>
+     </property>
+     <widget class="QProgressBar" name="ProgressBar">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>5</y>
+        <width>790</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar
+{
+border:none;
+background-color:rgb(180, 156, 112);
+border-radius:15px;
+}
+QProgressBar:chunk
+{
+border:none;
+background-color:rgb(230, 200, 143);
+border-radius:15px;
+}</string>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="ContentBar" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>70</y>
+       <width>800</width>
+       <height>470</height>
+      </rect>
+     </property>
+     <widget class="QListWidget" name="FilesList">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>35</y>
+        <width>350</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QListWidget
+{
+background-color:rgb(39,72,98);
+font-size:20px;
+}
+QListWidget::item
+{
+border:1px solid black;
+margin-top:1px;
+background-color:rgb(178,200,187);
+color:white;
+height:40px;
+}
+QListWidget::item:hover
+{
+background-color:rgb(188,210,197);
+}
+QListWidget::item::selected:active
+{
+background-color:rgb(208,230,217);
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="StartDetect">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>160</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border:none;
+background-color:rgb(69,137,148);
+border-radius:25px;
+color:white;
+font-size:20px;
+}
+QPushButton:hover
+{
+background-color: rgb(78, 156, 168);
+font-size:21px;
+}
+QPushButton:pressed
+{
+font-size:18px;
+	background-color: rgb(60, 119, 128);
+}</string>
+      </property>
+      <property name="text">
+       <string>开始识别</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ShowResult">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>260</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border:none;
+background-color:rgb(69,137,148);
+border-radius:25px;
+color:white;
+font-size:20px;
+}
+QPushButton:hover
+{
+background-color: rgb(78, 156, 168);
+font-size:21px;
+}
+QPushButton:pressed
+{
+font-size:18px;
+	background-color: rgb(60, 119, 128);
+}</string>
+      </property>
+      <property name="text">
+       <string>查看结果</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="SelectFiles">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>35</y>
+        <width>350</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border:none;
+background-color:rgb(39,72,98);
+font-size:30px;
+color:white;
+}</string>
+      </property>
+      <property name="text">
+       <string>选择文件</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ClearAll">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>35</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border:none;
+font-size:20px;
+background-color:rgb(39, 72, 98);
+}
+QPushButton:hover
+{
+background-color: rgb(78, 156, 168);
+}
+QPushButton:pressed
+{
+background-color: rgb(60, 119, 128);
+}</string>
+      </property>
+      <property name="text">
+       <string>X</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
